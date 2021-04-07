@@ -129,7 +129,7 @@ html {
            // Cloned IMG
            viewImg.style =" position: absolute; top: 0; left: 0;  bottom: 0; right: 0; margin-left: auto; margin-right: auto;   width: 100%;  height: 100%; max-width: 1250px; max-height: 700px; min-width: 150px; min-height: 50px;  margin: auto; left: 50%; transform: translate(-50%); ";
            viewImg.classList.remove("contentContainer_Item");
-           viewImg.onclick = function(){event.stopPropagation();}
+           viewImg.onmousedown = function(){event.stopPropagation();}
 
            overlayWindow.innerHTML =`<div id="topContainer" style="position: relative;   left: 0; top: 0; width: 100%; height: 12%;  "></div>
            
@@ -147,7 +147,7 @@ html {
 
            // Add IMG to the Overlay
         //    overlayWindow.appendChild(viewImg);
-           overlayWindow.onclick =  function(){ overlayWindow.remove();}
+           overlayWindow.onmousedown =  function(){ overlayWindow.remove();}
            document.body.insertBefore(overlayWindow, document.body.firstChild);
            document.getElementById('contentContainer').appendChild(viewImg);
         //    overlayWindow.appendChild(viewImg);
