@@ -133,25 +133,8 @@ html {
 
            viewImg.onmousedown = function(){event.stopPropagation();}
 
-           var overlayWindow = document.getElementById("overlayWindow");
-//            overlayWindow.innerHTML =`<div id="topContainer" style="position: relative;   left: 0; top: 0; width: 100%; height: 12%;  "></div>
-           
-//            <div id="contentContainer"  style="background-color: blue; 
-//    position: fixed;
-//    width: 100%; 
-//    padding-top: 56.25%;  margin: auto; top: 50%; transform: translateY(-50%);  /* 16:9 Aspect Ratio */">
-       
-//             </div> 
-//             `;
-
-
-           // Add IMG to the Overlay
-           //    overlayWindow.appendChild(viewImg);
-        //    overlayWindow.onmousedown =  function(){ overlayWindow.remove();}
-        //    document.body.insertBefore(overlayWindow, document.body.firstChild);
-           document.getElementById('contentContainer').appendChild(viewImg);
-        //    overlayWindow.appendChild(viewImg);
-        overlayWindow.style.display = 'block';
+           document.getElementById('contentContainer').appendChild(viewImg); // Add Img to the container in the overlayWindow
+           document.getElementById("overlayWindow").style.display = 'block'; // Show overlayWindow
         }
     </script>
     <!--Holder-------------------------------->
