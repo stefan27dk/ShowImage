@@ -119,8 +119,8 @@ html {
         function ViewImage(id)
         {
             // Create Overlay
-            var overlayWindow = document.createElement("div");
-            overlayWindow.style="background-color: red; position: absolute; z-index: 100;   width: 100%; height: 100%;  top: 0; left: 0;  bottom: 0; right: 0;";
+            // var overlayWindow = document.createElement("div");
+            // overlayWindow.style="background-color: red; position: absolute; z-index: 100;   width: 100%; height: 100%;  top: 0; left: 0;  bottom: 0; right: 0;";
             
             // Clone the Img
             var currentImg = document.getElementById(id);
@@ -128,30 +128,48 @@ html {
 
            // Cloned IMG
            viewImg.style =" position: absolute; top: 0; left: 0;  bottom: 0; right: 0; margin-left: auto; margin-right: auto;   width: 100%;  height: 100%; max-width: 1250px; max-height: 700px; min-width: 150px; min-height: 50px;  margin: auto; left: 50%; transform: translate(-50%); ";
+
            viewImg.classList.remove("contentContainer_Item");
+
            viewImg.onmousedown = function(){event.stopPropagation();}
 
-           overlayWindow.innerHTML =`<div id="topContainer" style="position: relative;   left: 0; top: 0; width: 100%; height: 12%;  "></div>
+           var overlayWindow = document.getElementById("overlayWindow");
+//            overlayWindow.innerHTML =`<div id="topContainer" style="position: relative;   left: 0; top: 0; width: 100%; height: 12%;  "></div>
            
-           <div id="contentContainer"  style="background-color: blue; 
-   position: fixed;
-   width: 100%; 
-   padding-top: 56.25%;  margin: auto; top: 50%; transform: translateY(-50%);  /* 16:9 Aspect Ratio */">
+//            <div id="contentContainer"  style="background-color: blue; 
+//    position: fixed;
+//    width: 100%; 
+//    padding-top: 56.25%;  margin: auto; top: 50%; transform: translateY(-50%);  /* 16:9 Aspect Ratio */">
        
-            </div> 
-            `;
+//             </div> 
+//             `;
 
 
            // Add IMG to the Overlay
            //    overlayWindow.appendChild(viewImg);
-           overlayWindow.onmousedown =  function(){ overlayWindow.remove();}
-           document.body.insertBefore(overlayWindow, document.body.firstChild);
+        //    overlayWindow.onmousedown =  function(){ overlayWindow.remove();}
+        //    document.body.insertBefore(overlayWindow, document.body.firstChild);
            document.getElementById('contentContainer').appendChild(viewImg);
         //    overlayWindow.appendChild(viewImg);
+        overlayWindow.style.display = 'block';
         }
     </script>
     <!--Holder-------------------------------->
     <div class="contentContainer_Item_Holder">
+
+
+
+      <div id="overlayWindow" onmousedown="this.style.display='none';" style="display: none; background-color: rgba(255, 0, 0, 0.514); position: fixed; z-index: 100;   width: 100%; height: 100%;  top: 0; left: 0;  bottom: 0; right: 0;">
+
+        <div id="topContainer" style="position: relative;   left: 0; top: 0; width: 100%; height: 12%;  "></div>
+           
+           <div id="contentContainer"  style="background-color: blue; position: fixed;  width: 100%;  padding-top: 56.25%;  margin: auto; top:  50%; transform: translateY(-50%);  /* 16:9 Aspect Ratio */">
+       
+            </div> 
+    
+    </div>
+
+
 
 
     <!--Img Viewer Button-------------------------------->
