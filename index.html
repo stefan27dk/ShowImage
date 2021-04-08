@@ -121,52 +121,49 @@ img.calcArea{
     content: url(https://media.gettyimages.com/photos/tiger-portrait-picture-id949472768?s=612x612);
 }
 
+
+
 </style>
 </head>
 <body>
+
+
+
     <script>
         function ViewImage(imgClass)
         { 
-            // Clone the Img
             var currentImg = document.getElementById('overlayImg');
             currentImg.className =`${imgClass}`;
-
-           // Cloned IMG
-        //    viewImg.style =" position: absolute; top: 0; left: 0;  bottom: 0; right: 0; margin-left: auto; margin-right: auto;   width: 100%;  height: 100%; max-width: 1250px; max-height: 700px; min-width: 150px; min-height: 50px;  margin: auto; left: 50%; transform: translate(-50%);";
-
-        //    viewImg.classList.remove("contentContainer_Item");
-        //    viewImg.onmousedown = function(){event.stopPropagation();} // Prevent mousedown click inherited from the parent overlayWindow "Dont hide the overlay window onmousedown on the img"
-        //    document.getElementById('overlayWindow-contentContainer').appendChild(viewImg); // Add Img to the container in the overlayWindow
            document.getElementById("overlayWindow").style.display = 'block'; // Show overlayWindow
         }
     </script>
+
+
+
+
     <!--Holder-------------------------------->
     <div class="contentContainer_Item_Holder">
 
-
-
       <div id="overlayWindow" onmousedown="this.style.display='none';" style="display: none; background-color: rgba(9, 21, 34, 0.7); position: fixed; z-index: 100;   width: 100%; height: 100%;  top: 0; left: 0;  bottom: 0; right: 0;">
 
- 
 
     <div id="overlayWindow-contentContainer"  style="position: fixed;  width: 100%;  padding-top: 56.25%;  margin: auto; top:  50%; transform: translateY(-50%);  /* 16:9 Aspect Ratio */">
     <img onmousedown="event.stopPropagation();" id="overlayImg" style ="position: absolute; top: 0; left: 0;  bottom: 0; right: 0; margin-left: auto; margin-right: auto;   width: 100%;  height: 100%; max-width: 1250px; max-height: 700px; min-width: 150px; min-height: 50px;  margin: auto; left: 50%; transform: translate(-50%);"/>
-    </div> 
+         </div> 
     </div>
 
 
 
 
     <!--Img Viewer Button-------------------------------->
-    <img onmousedown="ViewImage('calcArea')" class="view-Img-Button contentContainer_Item_Holder_Image_Viewer" 
-    ></img>
+    <img onmousedown="ViewImage('calcArea')" class="view-Img-Button contentContainer_Item_Holder_Image_Viewer"></img>
 
 
     <a href="https://github.com/stefan27dk/AutoFOCUS"  target="_blank" class="contentContainer_Item_Margin">
-        <img id="calcArea" alt="Calc. Area of Graf"  class="contentContainer_Item"
-        src="https://media.gettyimages.com/photos/tiger-portrait-picture-id949472768?s=612x612"></img>
-        
-   Calc. Area of graf - "JS"</a></div>
+        <img id="calcArea" alt="Calc. Area of Graf"  class="calcArea contentContainer_Item"></img>
+   Calc. Area of graf - "JS"</a>
+
+</div>
 
 
 </body>
