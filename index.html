@@ -109,34 +109,29 @@
         img.view-Img-Button {
             content: url('https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg');
         }
-
     </style>
 </head>
 
-
 <body>
+
+    <!--Overlay-Window------------------------------->
+    <div id="overlayWindow" onmousedown="this.style.display='none';"
+        style="display: none; background-color: rgba(9, 21, 34, 0.7); position: fixed; z-index: 100;  background: url(https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg) no-repeat center center fixed;  background-size: 100% 100%;  width: 100%; height: 100%;  top: 0; left: 0;  bottom: 0; right: 0;">
+
+
+        <!--Overlay--WIndow-Content--Container------------------------------>
+        <div  style="position: relative; border-radius: 10px; top: 50%; left: 50%;  transform: translate(-50%, -50%);  background-color:rgb(255, 168, 68);  width: 80%;  height: 80%;"> 
+            <img onmousedown="event.stopPropagation();" id="overlayImg"
+                style="position: relative; border-radius: 10px; left: 50%;  transform: translateX(-50%);  background-color:rgb(24, 130, 190);  width: 50%;  height: 50%;" />
+        </div>
+
+    </div>
+
+
+
 
     <!--Holder::::::::::::::::::::::::::::::::::::::::::::::-------------------------------->
     <div class="contentContainer_Item_Holder">
-
-
-        <!--Overlay-Window------------------------------->
-        <div id="overlayWindow" onmousedown="this.style.display='none';"
-            style="display: none; background-color: rgba(9, 21, 34, 0.7); position: fixed; z-index: 100;   width: 100%; height: 100%;  top: 0; left: 0;  bottom: 0; right: 0;">
-
-            <!--Overlay--WIndow-Content--Container------------------------------>
-            <div id="overlayWindow-contentContainer"
-                style="position: fixed;  width: 100%;  padding-top: 56.25%;  margin: auto; top:  50%; transform: translateY(-50%);  /* 16:9 Aspect Ratio */">
-
-                <!--Overlay--IMG----------------------------->
-                <img onmousedown="event.stopPropagation();" id="overlayImg"
-                    style="position: absolute; border-radius: 10px; top: 0; left: 0;  bottom: 0; right: 0; margin-left: auto; margin-right: auto;  width: 100%;  height: 100%; max-width: 1250px; max-height: 700px; min-width: 150px; min-height: 50px;  margin: auto; left: 50%; transform: translate(-50%);" />
-            </div>
-        </div>
-
-
-
-
         <!--Img Viewer Button-------------------------------->
         <img onmousedown="ViewImage('calcArea')"
             class="view-Img-Button contentContainer_Item_Holder_Image_Viewer"></img>
@@ -154,14 +149,14 @@
 
     <!---Images--Storage------------------------------------------------>
     <script>
-        var calcArea = 'https://media.gettyimages.com/photos/tiger-portrait-picture-id949472768?s=612x612';
+        var calcArea = 'https://images.unsplash.com/photo-1587924386279-caa7734f21f2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8OSUzQTE2fGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80';
         document.getElementById('calcAreaThumb').style.content = `url(${calcArea})`;
     </script>
 
 
 
 
-<!---Overlay Window---::JS::--------------------------------------------->
+    <!---Overlay Window---::JS::--------------------------------------------->
     <script>
         function ViewImage(imgName) {
             document.getElementById("overlayWindow").style.display = 'block'; // Show overlayWindow
